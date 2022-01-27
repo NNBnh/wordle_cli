@@ -8,7 +8,7 @@ module Wordle
 
   @@word_list = %w[apple linux helix super upper under hello cat dog fish begin end]
 
-  def self.start(word = @@word_list.select { |word| word.length == 5 } .sample, guess: 6)
+  def play(word = @@word_list.select { |word| word.length == 5 } .sample, guess: 6)
     word_length = word.length
 
     if word.is_a?(Integer)
