@@ -1,15 +1,13 @@
 # frozen_string_literal: true
 
-# require_relative "wordle_cli/word_list"
 require_relative "wordle_cli/version"
+require_relative "wordle_cli/word_list"
 
-module Wordle
+module WordleCli
   class Error < StandardError; end
 
-  @@word_list = %w[apple linux helix super upper under hello cat dog fish begin end]
-
   def play(word = @@word_list.select { |word| word.length == 5 } .sample, guess: 6)
-    word_length = word.length
+    word_length = word.is_a?(String) ? word.length : 0
 
     if word.is_a?(Integer)
       word_length = word
