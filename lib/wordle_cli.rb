@@ -6,7 +6,9 @@ require_relative "wordle_cli/word_list"
 module WordleCli
   class Error < StandardError; end
 
-  def play(word = @@word_list.select { |word| word.length == 5 } .sample, guess: 6)
+  def self.play(word = @@word_list.select { |word| word.length == 5 } .sample, guess: 6)
+    word = word.to_s if word.is_a?(Symbol)
+
     word_length = word.is_a?(String) ? word.length : 0
 
     if word.is_a?(Integer)

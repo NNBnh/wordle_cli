@@ -13,21 +13,7 @@
 
 _TODO_
 
-### 📔 Story
-
-_TODO_
-
-### ✨ Features
-
-_TODO_
-
-## 🚀 Setup
-
-### 🧾 Dependencies
-
-_TODO_
-
-### 📥 Installation
+## 📥 Installation
 
 Add this line to your application's Gemfile:
 
@@ -51,14 +37,10 @@ gem install wordle_cli
 
 _TODO_
 
-## ⚙️ Configuration
-
-_TODO_
-
 ## 💌 Credits
 
 Special thanks to:
-- [**Customized wordlist creator**](http://app.aspell.net/create) from [SCOWL (And Friends)](http://wordlist.aspell.net)
+- [**List of English words**](https://github.com/dwyl/english-words) from [DWYL](https://github.com/dwyl)
 - [**Wordle**](https://github.com/JonathanWThom/wordle) by [Jonathan Thom](https://github.com/JonathanWThom)
 
 <br><br><br><br>
