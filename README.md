@@ -11,7 +11,7 @@
 
 ## 💡 About
 
-_TODO_
+A dead simple Wordle game for your command-line that you can choose custom word or length.
 
 ## 📥 Installation
 

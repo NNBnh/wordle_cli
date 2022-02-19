@@ -1,0 +1,32 @@
+#!/usr/bin/env ruby
+
+require "optparse"
+require "wordle_cli"
+
+@custom_word = nil
+@custom_guess = 6
+
+OptionParser.new do |parser|
+  parser.on("-w WORD", "--word WORD", String, "Set custom word") do |word|
+    unless word.match?(/\A[[:alpha:]]+\z/)
+      STDERR.puts "\"#{word}\" is not a invalid word."
+      exit 1
+    end
+
+    @custom_word = word
+  end
+
+  parser.on("-l INTEGER", "--length INTEGER", Integer, "Set length of word") do |number|
+    @custom_word = number
+  end
+
+  parser.on("-g INTEGER", "--guess INTEGER", Integer, "Set number of guess player have") do |number|
+    @custom_guess = number
+  end
+end.parse!
+
+option = []
+option.push(@custom_word) if @custom_word
+
+word_reveal = WordleCli.play(*option, guess: @custom_guess)
+puts "- \e[91m#{word_reveal}\e[m -" if word_reveal

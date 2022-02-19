@@ -23,29 +23,29 @@ module WordleCli
       guess_word = nil
 
       loop do
-        print "\033[1m", ">".ljust(padding), "\033[m"
+        print "\e[1m", ">".ljust(padding), "\e[m"
         guess_word = gets.chomp.downcase
 
         break if guess_word_list.include?(guess_word)
 
-        print "\033[A\033[?7l", " " * guess_word.size * 4, "\033[?7h\n\033[A"
+        print "\e[A\e[?7l", " " * guess_word.size * 4, "\e[?7h\n\e[A"
       end
 
-      print "\033[A\033[37m", (guess_count + 1).to_s.ljust(padding), "\033[m"
+      print "\e[A\e[37m", (guess_count + 1).to_s.ljust(padding), "\e[m"
 
       guess_word.chars.each_with_index do |char, index|
         if char == word[index]
-          print "\033[0;1;30;102m"
+          print "\e[0;1;30;102m"
         elsif word.include? char
-          print "\033[0;30;103m"
+          print "\e[0;30;103m"
         else
-          print "\033[0;100m"
+          print "\e[0;100m"
         end
 
         print "#{char}"
       end
 
-      puts "\033[m"
+      puts "\e[m"
 
       return if guess_word == word
     end
